@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Intelligence Hub - Development Instance
+  hb-ih-dev:
+    image: highbyte:4.3.0
+    ports:
+      - 45545:45245
+      - 1585:1885
+      - 8585:8585
+    volumes:
+      - devhbappData:/usr/local/highbyte/appData
+  # Intelligence Hub - Test Instance
+  hb-ih-tst:
+    image: highbyte:4.3.0
+    ports:
+      - 45645:45245
+      - 1685:1885
+      - 8685:8885
+    volumes:
+      - tsthbappData:/usr/local/highbyte/appData
+  # Intelligence Hub - Quality Instance
+  hb-ih-qa:
+    image: highbyte:4.3.0
+    ports:
+      - 45745:45245
+      - 1785:1885
+      - 8785:8885
+    volumes:
+      - qahbappData:/usr/local/highbyte/appData
+  # Intelligence Hub - Production Instance
+  hb-ih-prod:
+    image: highbyte:4.3.0
+    ports:
+      - 45745:45245
+      - 1785:1885
+      - 8785:8885
+    volumes:
+      - prodhbappData:/usr/local/highbyte/appData
+  # Intelligence Hub - Central Config
+  hb-ih-cc:
+    image: highbyte:4.3.0
+    ports:
+      - 45945:45245
+      - 1985:1885
+      - 8985:8885
+    volumes:
+      - cchbappData:/usr/local/highbyte/appData
+ 
+volumes:
+  devhbappData:
+      driver: local
+  tsthbappData:
+      driver: local
+  qahbappData:
+      driver: local
+  prodhbappData:
+      driver: local
+  cchbappData:
+      driver: local
