@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # Intelligence Hub - Development Instance
   hb-ih-dev:
-    image: highbyte:4.3.0
+    image: highbyte:${IH_VERSION}
     ports:
       - 45545:45245
       - 1585:1885
@@ -12,7 +12,7 @@ services:
       - devhbappData:/usr/local/highbyte/appData
   # Intelligence Hub - Test Instance
   hb-ih-tst:
-    image: highbyte:4.3.0
+    image: highbyte:${IH_VERSION}
     ports:
       - 45645:45245
       - 1685:1885
@@ -21,7 +21,7 @@ services:
       - tsthbappData:/usr/local/highbyte/appData
   # Intelligence Hub - Quality Instance
   hb-ih-qa:
-    image: highbyte:4.3.0
+    image: highbyte:${IH_VERSION}
     ports:
       - 45745:45245
       - 1785:1885
@@ -30,7 +30,7 @@ services:
       - qahbappData:/usr/local/highbyte/appData
   # Intelligence Hub - Production Instance
   hb-ih-prod:
-    image: highbyte:4.3.0
+    image: highbyte:${IH_VERSION}
     ports:
       - 45745:45245
       - 1785:1885
